@@ -39,15 +39,6 @@ class ConfigsValidator {
   // -------------------------
 
   validateScalars_() {
-    // spreadsheetFirstRowNumber
-    if (typeof spreadsheetFirstRowNumber !== "number" || !Number.isInteger(spreadsheetFirstRowNumber) || spreadsheetFirstRowNumber < 1) {
-      this.errors.push(`spreadsheetFirstRowNumber は 1以上の整数が必要です（現在: ${String(spreadsheetFirstRowNumber)}）`);
-    }
-
-    // spreadsheetColNumber
-    if (typeof spreadsheetColNumber !== "number" || !Number.isInteger(spreadsheetColNumber) || spreadsheetColNumber < 1) {
-      this.errors.push(`spreadsheetColNumber は 1以上の整数が必要です（現在: ${String(spreadsheetColNumber)}）`);
-    }
 
     // macroProcessMsTimeLimit
     if (typeof macroProcessMsTimeLimit !== "number" || !Number.isFinite(macroProcessMsTimeLimit) || macroProcessMsTimeLimit <= 0) {
