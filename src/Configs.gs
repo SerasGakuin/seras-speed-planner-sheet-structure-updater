@@ -1,6 +1,6 @@
 //Configs.gs
-
-const srcBook = SpreadsheetApp.openById("stub!"); // template 
+const srcBookId = PropertiesService.getScriptProperties().getProperty('TemplateSsId');
+const srcBook = SpreadsheetApp.openById(srcBookId); // template 
 
 const updateProjectBook = SpreadsheetApp.getActiveSpreadsheet();
 
