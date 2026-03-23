@@ -7,9 +7,6 @@ const updateProjectBook = SpreadsheetApp.getActiveSpreadsheet();
 const updateQueueSheet = updateProjectBook.getSheetByName('更新キュー');
 const logSheet = updateProjectBook.getSheetByName('ログ');
 
-const spreadsheetFirstRowNumber = 3;  // H3 からリンクの格納開始行
-const spreadsheetColNumber = 8;       // H列　スピードプランナーのリンクの格納列
-
 const macroProcessMsTimeLimit = 6*60*1000;//マクロ実行時間制限。ミリ秒単位。
 
 /**
@@ -22,7 +19,7 @@ const sheetNames = ['月間実績'
 /**
 * 更新しない生徒のブックのurl一覧。更新するたびにデータ構造が変わる可能性があるので、二度同じブックの同じシートに対して同じアップデート（およびデータの移行）をすることをさけるために使う。
 * 理由があって関数実行前に手動で更新した場合などにこの配列にurlを登録すればよい。
-* 更新する生徒のブックのurlは生徒一覧シートの特定列から取得しているのだが、この配列に格納されたurlのブックは更新されなくなる。完全一致で判定するので必ず生徒一覧シートのurlをいれること。
+* 更新する生徒のブックのurlは生徒一覧シートの特定列から取得しているのだが、この配列に格納されたurlのブックは更新されなくなる。
 * willNotUpdateBooksUrl =['url1'.'url2a']
 */
 const willNotUpdateBooksUrl =[
